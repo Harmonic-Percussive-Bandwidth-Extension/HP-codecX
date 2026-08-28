@@ -84,9 +84,13 @@ All commands below are run **from the repository root**, which is what puts
 
 ## Pretrained weights
 
-Download the two checkpoints from the
-[latest release](https://github.com/Harmonic-Percussive-Bandwidth-Extension/HP-codecX/releases/latest) and
-lay them out as the scripts expect:
+[![Weights DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22144249.svg)](https://doi.org/10.5281/zenodo.22144249)
+
+Download the two checkpoints, either from the
+[latest GitHub release](https://github.com/Harmonic-Percussive-Bandwidth-Extension/HP-codecX/releases/latest)
+or from the archived Zenodo deposit
+[10.5281/zenodo.22144249](https://doi.org/10.5281/zenodo.22144249), and lay them
+out as the scripts expect:
 
 ```
 runs/
@@ -293,9 +297,13 @@ European Union nor the granting authority can be held responsible for them.
 ## Citation
 
 The manuscript is under review; this entry will be updated once it is
-published. To cite the software itself, use the concept DOI
-[10.5281/zenodo.22144165](https://doi.org/10.5281/zenodo.22144165), which always
-resolves to the most recent release.
+published. To cite the artefacts directly, use the concept DOIs below — each
+always resolves to the most recent version:
+
+| artefact | DOI |
+|---|---|
+| Code | [10.5281/zenodo.22144165](https://doi.org/10.5281/zenodo.22144165) |
+| Pretrained weights | [10.5281/zenodo.22144249](https://doi.org/10.5281/zenodo.22144249) |
 
 ```bibtex
 @unpublished{ginies_hpcodecx,
