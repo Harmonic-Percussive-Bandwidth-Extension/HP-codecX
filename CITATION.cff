@@ -5,7 +5,7 @@ title: "HP-codecX: Harmonic-Percussive Disentangled Neural Audio Codec for Bandw
 message: "If you use this software, please cite the article below."
 type: software
 license: MIT
-repository-code: "https://github.com/REPLACE-ME/HP-codecX"
+repository-code: "https://github.com/Harmonic-Percussive-Bandwidth-Extension/HP-codecX"
 url: "https://harmonic-percussive-bandwidth-extension.github.io/"
 authors:
   - family-names: "Giniès"
