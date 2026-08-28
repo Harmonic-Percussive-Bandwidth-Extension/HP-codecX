@@ -51,9 +51,9 @@ result added back to the upsampled input.
  s₈;₁₆ ─────► │ encoder ─► harmonic RVQ ─┐            │ ─► ŝ₈;₁₆
               │         └► percussive RVQ ┴─► Σ ─► decoder
               └──────────────┬────────────────────────┘
-                             │ tokens          │ upsample
-                             ▼                 ▼
-              harmonic transformer ─┐          │
+                             │ tokens                           │ upsample
+                             ▼                                  ▼
+              harmonic transformer ─┐                           │
               percussive transformer ┴─► Σ ─► 48 kHz decoder ─► + ─► s̃₂₄;₄₈
 ```
 
