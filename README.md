@@ -50,7 +50,7 @@ result added back to the upsampled input.
               ┌──────────── 16 kHz branch ────────────┐
  s₈;₁₆ ─────► │ encoder ─► harmonic RVQ ─┐            │ ─► ŝ₈;₁₆
               │         └► percussive RVQ ┴─► Σ ─► decoder
-              └──────────────┬────────────────────────┘
+              └──────────────┬────────────────────────┘       s₈;₁₆
                              │ tokens                           │ upsample
                              ▼                                  ▼
               harmonic transformer ─┐                           │
