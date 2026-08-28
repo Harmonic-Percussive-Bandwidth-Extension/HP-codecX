@@ -1,0 +1,19 @@
+# HP-codec, phase 3/3: unfreeze everything and finetune both branches jointly.
+#
+# Losses are halved and the learning rate is lowered, so that joint training
+# refines the two branches rather than undoing either of them.
+
+$include:
+  - conf/codec/16khz.yml
+
+training_sr: finetuning
+batch_size: 16
+num_iters: 25000
+AdamW.lr: 0.00005
+
+lambdas:
+  mel/loss: 7.5
+  adv/feat_loss: 1.0
+  adv/gen_loss: 0.5
+  vq/commitment_loss: 0.25
+  vq/codebook_loss: 1.0

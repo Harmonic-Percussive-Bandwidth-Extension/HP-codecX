@@ -1,0 +1,11 @@
+# HP-codec, phase 2/3: freeze the 16 kHz branch and train the 48 kHz branch on
+# the residual between the 48 kHz target and the upsampled 16 kHz reconstruction.
+#
+# Resumes from the best 16 kHz checkpoint; the training script handles the
+# freezing and the checkpoint tag itself.
+
+$include:
+  - conf/codec/16khz.yml
+
+training_sr: 48000
+batch_size: 16
