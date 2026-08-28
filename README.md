@@ -1,5 +1,8 @@
 # Harmonic-Percussive Disentangled Neural Audio Codec for Bandwidth Extension
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22144165.svg)](https://doi.org/10.5281/zenodo.22144165)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 Reference implementation of **HP-codec** and **HP-codecX**, the two models
 described in *Harmonic-Percussive Disentangled Neural Audio Codec for Bandwidth
 Extension* (Giniès, Bie, Fercoq and Richard). **The manuscript is currently
@@ -82,7 +85,7 @@ All commands below are run **from the repository root**, which is what puts
 ## Pretrained weights
 
 Download the two checkpoints from the
-[latest release](https://github.com/REPLACE-ME/HP-codecX/releases/latest) and
+[latest release](https://github.com/Harmonic-Percussive-Bandwidth-Extension/HP-codecX/releases/latest) and
 lay them out as the scripts expect:
 
 ```
@@ -290,7 +293,9 @@ European Union nor the granting authority can be held responsible for them.
 ## Citation
 
 The manuscript is under review; this entry will be updated once it is
-published.
+published. To cite the software itself, use the concept DOI
+[10.5281/zenodo.22144165](https://doi.org/10.5281/zenodo.22144165), which always
+resolves to the most recent release.
 
 ```bibtex
 @unpublished{ginies_hpcodecx,
@@ -300,6 +305,17 @@ published.
             Fercoq, Olivier and Richard, Ga{\"e}l},
   year   = {2026},
   note   = {Manuscript under review}
+}
+
+@software{ginies_hpcodecx_software,
+  title     = {HP-codecX: Harmonic-Percussive Disentangled Neural Audio
+               Codec for Bandwidth Extension},
+  author    = {Gini{\`e}s, Beno{\^i}t and Bie, Xiaoyu and
+               Fercoq, Olivier and Richard, Ga{\"e}l},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.22144165},
+  url       = {https://doi.org/10.5281/zenodo.22144165}
 }
 ```
 
