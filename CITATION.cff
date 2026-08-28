@@ -1,8 +1,10 @@
 # Gives GitHub a "Cite this repository" button.
-# Update `preferred-citation` (volume, pages, doi, year) once the paper is accepted.
+# The article is a manuscript under review. Once it is accepted, change
+# `preferred-citation` to `type: article` and add the journal, volume, pages,
+# year and DOI.
 cff-version: 1.2.0
 title: "HP-codecX: Harmonic-Percussive Disentangled Neural Audio Codec for Bandwidth Extension"
-message: "If you use this software, please cite the article below."
+message: "If you use this software, please cite the manuscript below."
 type: software
 license: MIT
 repository-code: "https://github.com/Harmonic-Percussive-Bandwidth-Extension/HP-codecX"
@@ -23,16 +25,20 @@ authors:
     affiliation: "LTCI, Télécom Paris, Institut Polytechnique de Paris"
 
 preferred-citation:
-  type: article
+  type: unpublished
   title: "Harmonic-Percussive Disentangled Neural Audio Codec for Bandwidth Extension"
-  journal: "IEEE Transactions on Audio, Speech and Language Processing"
   year: 2026
+  notes: "Manuscript under review."
   authors:
     - family-names: "Giniès"
       given-names: "Benoît"
+      affiliation: "LTCI, Télécom Paris, Institut Polytechnique de Paris"
     - family-names: "Bie"
       given-names: "Xiaoyu"
+      affiliation: "LTCI, Télécom Paris, Institut Polytechnique de Paris"
     - family-names: "Fercoq"
       given-names: "Olivier"
+      affiliation: "LTCI, Télécom Paris, Institut Polytechnique de Paris"
     - family-names: "Richard"
       given-names: "Gaël"
+      affiliation: "LTCI, Télécom Paris, Institut Polytechnique de Paris"
