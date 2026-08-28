@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hpcodec"
+version = "1.0.0"
+description = "Harmonic-Percussive disentangled neural audio codec for bandwidth extension"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+    { name = "Benoît Giniès", email = "benoit.ginies@telecom-paris.fr" },
+    { name = "Xiaoyu Bie" },
+    { name = "Olivier Fercoq" },
+    { name = "Gaël Richard" },
+]
+keywords = [
+    "audio bandwidth extension",
+    "neural audio codec",
+    "harmonic percussive separation",
+    "audio language model",
+]
+dependencies = [
+    "argbind>=0.3.7",
+    "descript-audiotools>=0.7.2",
+    "einops>=0.7.0",
+    "librosa>=0.10.1",
+    "numpy>=1.26,<2",
+    "torch>=2.1",
+    "torcheval>=0.0.7",
+    "tensorboard>=2.14",
+]
+
+[project.urls]
+Homepage = "https://harmonic-percussive-bandwidth-extension.github.io/"
+
+[tool.setuptools.packages.find]
+include = ["hpcodec*"]

@@ -1,0 +1,9 @@
+# Versions this code was developed and evaluated with (Python 3.11).
+argbind>=0.3.7
+descript-audiotools>=0.7.2
+einops>=0.7.0
+librosa>=0.10.1
+numpy>=1.26,<2
+torch>=2.1
+torcheval>=0.0.7
+tensorboard>=2.14

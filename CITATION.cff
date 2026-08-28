@@ -1,0 +1,38 @@
+# Gives GitHub a "Cite this repository" button.
+# Update `preferred-citation` (volume, pages, doi, year) once the paper is accepted.
+cff-version: 1.2.0
+title: "HP-codecX: Harmonic-Percussive Disentangled Neural Audio Codec for Bandwidth Extension"
+message: "If you use this software, please cite the article below."
+type: software
+license: MIT
+repository-code: "https://github.com/REPLACE-ME/HP-codecX"
+url: "https://harmonic-percussive-bandwidth-extension.github.io/"
+authors:
+  - family-names: "Giniès"
+    given-names: "Benoît"
+    affiliation: "LTCI, Télécom Paris, Institut Polytechnique de Paris"
+    email: "benoit.ginies@telecom-paris.fr"
+  - family-names: "Bie"
+    given-names: "Xiaoyu"
+    affiliation: "LTCI, Télécom Paris, Institut Polytechnique de Paris"
+  - family-names: "Fercoq"
+    given-names: "Olivier"
+    affiliation: "LTCI, Télécom Paris, Institut Polytechnique de Paris"
+  - family-names: "Richard"
+    given-names: "Gaël"
+    affiliation: "LTCI, Télécom Paris, Institut Polytechnique de Paris"
+
+preferred-citation:
+  type: article
+  title: "Harmonic-Percussive Disentangled Neural Audio Codec for Bandwidth Extension"
+  journal: "IEEE Transactions on Audio, Speech and Language Processing"
+  year: 2026
+  authors:
+    - family-names: "Giniès"
+      given-names: "Benoît"
+    - family-names: "Bie"
+      given-names: "Xiaoyu"
+    - family-names: "Fercoq"
+      given-names: "Olivier"
+    - family-names: "Richard"
+      given-names: "Gaël"
