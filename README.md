@@ -2,7 +2,8 @@
 
 Reference implementation of **HP-codec** and **HP-codecX**, the two models
 described in *Harmonic-Percussive Disentangled Neural Audio Codec for Bandwidth
-Extension* (Giniès, Bie, Fercoq and Richard).
+Extension* (Giniès, Bie, Fercoq and Richard). **The manuscript is currently
+under review.**
 
 Audio examples, additional architectural detail and pretrained weights:
 <https://harmonic-percussive-bandwidth-extension.github.io/>
@@ -50,10 +51,10 @@ result added back to the upsampled input.
               ┌──────────── 16 kHz branch ────────────┐
  s₈;₁₆ ─────► │ encoder ─► harmonic RVQ ─┐            │ ─► ŝ₈;₁₆
               │         └► percussive RVQ ┴─► Σ ─► decoder
-              └──────────────┬────────────────────────┘       s₈;₁₆
-                             │ tokens                           │ upsample
-                             ▼                                  ▼
-              harmonic transformer ─┐                           │
+              └──────────────┬────────────────────────┘
+                             │ tokens          │ upsample
+                             ▼                 ▼
+              harmonic transformer ─┐          │
               percussive transformer ┴─► Σ ─► 48 kHz decoder ─► + ─► s̃₂₄;₄₈
 ```
 
@@ -285,6 +286,22 @@ This work was funded by the European Union (ERC, HI-Audio, 101052978). Views and
 opinions expressed are those of the authors only and do not necessarily reflect
 those of the European Union or the European Research Council. Neither the
 European Union nor the granting authority can be held responsible for them.
+
+## Citation
+
+The manuscript is under review; this entry will be updated once it is
+published.
+
+```bibtex
+@unpublished{ginies_hpcodecx,
+  title  = {Harmonic-Percussive Disentangled Neural Audio Codec for
+            Bandwidth Extension},
+  author = {Gini{\`e}s, Beno{\^i}t and Bie, Xiaoyu and
+            Fercoq, Olivier and Richard, Ga{\"e}l},
+  year   = {2026},
+  note   = {Manuscript under review}
+}
+```
 
 ## Licence
 
