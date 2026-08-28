@@ -1,0 +1,101 @@
+# HP-codecX: the bandwidth extension language model.
+#
+# The codec is loaded frozen from `codec_save_path` and only supplies tokens;
+# nothing below `TransformerModel.*` is trained. The DAC.* block must match the
+# configuration the codec was trained with, or the checkpoint will not load.
+#
+# Edit `codec_save_path` and the dataset paths before training.
+
+# Codec (frozen) -- must match conf/codec/16khz.yml
+DAC.sample_rates: [16000, 48000]
+DAC.encoder_dims: [64, 64]
+DAC.encoder_rates: [[2, 2, 5, 8], [2, 5, 6, 8]]
+DAC.decoder_dim: [1536, 1536]
+DAC.decoder_rates: [[8, 5, 2, 2], [8, 6, 5, 2]]
+DAC.final_sum: True
+DAC.n_codebooks: [3, 3]
+DAC.codebooks_comp: [3, 3]
+DAC.codebook_size: 1024
+DAC.codebook_dim: 8
+DAC.quantizer_dropout: 1.0
+
+# Transformer. n_input_embs covers the 3 low-frequency codebooks plus the
+# n_pred_tokens - 1 high-frequency codebooks already predicted at the last step.
+TransformerModel.n_input_embs: 5
+TransformerModel.ntoken_input_true: 1024
+TransformerModel.ntoken_input: 1024
+TransformerModel.ntoken_output: 1024
+TransformerModel.ninp: 1024
+TransformerModel.nhead: 8
+TransformerModel.nhid: 4096
+TransformerModel.nlayers: 6
+TransformerModel.n_pred_tokens: 3
+
+# Optimization
+AdamW.betas: [0.8, 0.99]
+AdamW.lr: 0.0001
+ScheduleLR.wu_start_factor: 1.0
+ScheduleLR.wu_end_factor: 1.0
+ScheduleLR.wu_iters: 0
+ScheduleLR.T_max: 44000
+
+amp: false
+device: cuda
+seed: 0
+num_iters: 44000
+save_iters: [1000, 2000, 5000, 10000, 15000, 20000, 50000, 100000, 200000]
+valid_freq: 100
+sample_freq: 1000
+val_idx: [0, 1, 2, 3, 4, 5, 6, 7]
+
+inpainting_sr: 48000
+n_pred_tokens: 3
+
+# EDIT ME: path to the finetuned HP-codec checkpoint directory.
+codec_save_path: runs/hp-codec/best_finetuning/
+
+VolumeNorm.db: [const, -16]
+
+# Transforms
+build_transform.preprocess:
+  - Identity
+build_transform.augment_prob: 0.0
+build_transform.augment:
+  - Identity
+build_transform.postprocess:
+  - VolumeNorm
+  - RescaleAudio
+  - ShiftPhase
+
+# Data
+batch_size: 32
+val_batch_size: 32
+num_workers: 16
+
+train/AudioDataset.duration: 2.5
+train/AudioDataset.n_examples: 10000000
+
+val/AudioDataset.duration: 2.5
+val/build_transform.augment_prob: 1.0
+val/AudioDataset.n_examples: 250
+
+test/AudioDataset.duration: 2.5
+test/build_transform.augment_prob: 1.0
+test/AudioDataset.n_examples: 1000
+
+AudioLoader.shuffle: true
+AudioDataset.without_replacement: true
+
+# EDIT ME: point these at your own copies of MUSDB18 and MTG-Jamendo.
+train/build_dataset.folders:
+  music_hq:
+    - /path/to/MUSDB18/train/Mixtures
+    - /path/to/mtg-jamendo-dataset/audio
+
+val/build_dataset.folders:
+  music_hq:
+    - /path/to/MUSDB18/test/Mixtures
+
+test/build_dataset.folders:
+  music_hq:
+    - /path/to/MUSDB18/test/Mixtures
